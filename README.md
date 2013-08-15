@@ -25,4 +25,9 @@ virtualenv venv
 pip install -r requirements.txt
 ```
 
-4. Hack
+4. Run the devserver
+```sh
+fab run
+```
+
+5. Hack
