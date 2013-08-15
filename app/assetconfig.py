@@ -5,11 +5,11 @@ from flask.ext.assets import Environment, Bundle
 from app import app
 
 
-env = Environment(app)
-env.versions = 'hash'
+environment = Environment(app)
+environment.versions = 'hash'
 manifest_path = realpath(join(dirname(__file__), '.static-manifest'))
-env.manifest = 'file://%s' % manifest_path
-env.cache = False
+environment.manifest = 'file://%s' % manifest_path
+environment.cache = False
 
 css_main = Bundle(
     Bundle('less/main.less', filters='less'),
