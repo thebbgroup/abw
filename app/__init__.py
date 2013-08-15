@@ -33,6 +33,11 @@ def debug_context():
     "Notifies templates that they're in debug mode"
     return dict(debug=app.debug)
 
+@app.context_processor
+def ga_context():
+    "Notifies templates that they're in debug mode"
+    return dict(google_analytics_id=app.config['GOOGLE_ANALYTICS_ID'])
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.jinja'), 404

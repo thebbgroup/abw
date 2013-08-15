@@ -12,7 +12,7 @@ environment.manifest = 'file://%s' % manifest_path
 environment.cache = False
 
 css_main = Bundle(
-    Bundle('less/main.less', filters='less'),
+    'css/main.css',
     filters='cssmin',
     output='css/main.%(version)s.css'
 )
