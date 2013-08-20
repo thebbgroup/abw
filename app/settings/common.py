@@ -17,3 +17,7 @@ DEFAULT_MAIL_SENDER = 'hello@%s' % socket.getfqdn()
 ASSETS_DEBUG = False
 
 GOOGLE_ANALYTICS_ID = 'foo'
+
+# Shell SMTP server for devevlopment:
+# python -m smtpd -n -c DebuggingServer localhost:1025
+# MAIL_PORT = 1025
