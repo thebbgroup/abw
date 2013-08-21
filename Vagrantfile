@@ -3,7 +3,7 @@
 
 Vagrant::Config.run do |config|
   config.vm.box = "ubuntu-docker"
-  config.vm.box_url = "http://cm3.beatbullying.org/cheeseshop/ubtuntu-docker.box"
+  config.vm.box_url = "http://cm3.beatbullying.org/cheeseshop/ubuntu-docker.box"
   config.vm.forward_port 49000, 8080
 
   # TODO replace this build step with 'docker pull' of a prebuilt
