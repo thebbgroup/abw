@@ -14,6 +14,6 @@ AUTH_USERS = {'admin': 'foo'}
 
 DEFAULT_MAIL_SENDER = 'hello@%s' % socket.getfqdn()
 
-ASSETS_DEBUG = True
+ASSETS_DEBUG = False
 
 GOOGLE_ANALYTICS_ID = 'foo'
