@@ -10,15 +10,17 @@ environment.versions = 'hash'
 manifest_path = realpath(join(dirname(__file__), '.static-manifest'))
 environment.manifest = 'file://%s' % manifest_path
 environment.cache = False
+environment.debug = False
 
 css_main = Bundle(
     'css/main.css',
+    Bundle('less/main.less', filters='less'),
     filters='cssmin',
     output='css/main.%(version)s.css'
 )
 
 js_head = Bundle(
-    'js/modernizr.custom.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js',
     output='js/head.%(version)s.js'
 )
 
