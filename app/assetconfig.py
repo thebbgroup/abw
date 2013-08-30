@@ -1,4 +1,4 @@
-from os.path import dirname, join, realpath
+from os.path import dirname, join, realpath, normpath
 
 from flask.ext.assets import Environment, Bundle
 
@@ -7,8 +7,10 @@ from app import app
 
 environment = Environment(app)
 environment.versions = 'hash'
-manifest_path = realpath(join(dirname(__file__), '.static-manifest'))
-environment.manifest = 'file://%s' % manifest_path
+manifest_path = normpath(realpath(join(dirname(__file__), 'static-manifest')))
+print manifest_path
+environment.manifest = 'file:%s' % manifest_path
+
 environment.cache = False
 environment.debug = False
 
