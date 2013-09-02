@@ -7,7 +7,7 @@ from app import app
 
 environment = Environment(app)
 environment.versions = 'hash'
-manifest_path = normpath(realpath(join(dirname(__file__), 'static-manifest')))
+manifest_path = normpath(realpath(join(dirname(__file__), '.static-manifest')))
 print manifest_path
 environment.manifest = 'file:%s' % manifest_path
 
