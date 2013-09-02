@@ -2,7 +2,7 @@ Flask==0.10.1
 Flask-SQLAlchemy==1.0
 psycopg2==2.5.1
 Flask-WTF==0.9.0
-Flask-Assets==0.8
+git+https://github.com/thebbgroup/flask-assets.git@f708a69cb3297b094cf1ebc3d614607dd16973c2#egg=flask-assets-thebbgroup
 nose==1.3.0
 Fabric==1.7.0
 alembic==0.6.0
