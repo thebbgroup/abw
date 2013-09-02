@@ -1,3 +1,4 @@
+
 /*
  * HTML5 Boilerplate
  *
@@ -32,7 +33,6 @@ textarea {
 @purple: #8a3088;
 @light-blue: #70b9df;
 @dark-blue: #1c3762;
-@v-light-blue: #afdbdc;
 
 /* apply a natural box layout model to all elements */
 *, *:before, *:after {
@@ -76,7 +76,7 @@ p{
      line-height: 1.3em;
 }
 /*ABW styles*/
-h1, h2, h3, h4, h5{
+h1, h2, h3, h4{
     text-transform: uppercase;
     font-family: 'TheMixSemiBold', arial, sans-serif;
 }
@@ -92,10 +92,6 @@ h4{
     margin: 0px 0 10px;
     font-size: 1.3em;
 }
-h5{
-    font-size: 1em;
-    margin-bottom: 0;
-}
 header .abw-intro, .site-links, footer, .tbm-intro{
     width: 100%;
 }
@@ -106,7 +102,6 @@ header{
 }
 p{
     line-height: 1.7em;
-    margin:0 0 1em;
 }
 #navigation{
     width: 100%;
@@ -124,7 +119,7 @@ p{
         }
     }
 }
-.intro, .fundraising-home, .fundraising-friends, .fundraising-school, .section{
+.abw-intro, .tbm-intro{
     position: relative;
     background-color: @blue;
     float: left;
@@ -138,34 +133,15 @@ p{
     h2{
         margin:5px 0 26px 0;
     }
-}
-.abw-intro p{
-    margin-top: 25px;
+    p{
+        margin-top: 25px;
+    }
 }
 .tbm-intro{
     background-color: @light-blue;
 }
-.bm-signup, .wb-links, .fundraising-friends, .fr-links, .resources-assembly{
+.bm-signup{
     background-color: @blue;
-}
-.involved-intro, .resources-lesson{
-    background-color: @purple;
-}
-.fundraising-home, .resources-intro{
-    background-color: @turquoise;
-}
-.fundraising-school, .fr-link, .resources-materials{
-    background-color: @pink;
-}
-.wristbands-intro{
-    background-color: @v-light-blue;
-    color: #333;
-    a{
-        color: @blue;
-        &:hover{
-            color:@purple;
-        }
-    }
 }
 .site-links{
     float: left;
@@ -367,9 +343,6 @@ input[type=submit]{
             }
         }
     }
-    #reources #resources-link, #involved #involved-link, #tbm #bm-link, #help #gh-link, #wristbnds #wrisband-link{
-        color: @blue;
-    }
     .container{
         width: 100%;
         padding: 15px 2%;
@@ -412,111 +385,13 @@ input[type=submit]{
     .caveat{
         float: left;
          p{
-            width: 90%;
+            width: 100%;
             float:left;
             padding-left: 100px;
             font-size: 0.8em;
             line-height: 1.3em;
             background: url(../img/sprite.png) no-repeat 0 -435px;
             min-height: 67px;
-        }
-    }
-    .wb-links{
-        background-color: transparent;
-        padding: 0;
-        li{
-            list-style: none;
-            clear: both;
-            margin: 0;
-            padding: 0;
-            a{
-                padding: 0 5%;
-                float: left;
-                height: 50px;
-                border-radius: 4px;
-                margin-top: 10px;
-                line-height: 50px;
-                background-color: @blue;
-                min-width: 45%;
-            }
-        }
-    }
-    .resources-intro{
-        padding-bottom: 40px;
-        position: relative;
-        .intro-container .button{
-            display: block;
-            width: 33.33%;
-            float: left;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            font-size: 0.8em;
-            position: absolute;
-            &.res-lp{
-                background-color: @purple;
-                bottom: -40px;
-                left: 0;
-            }        
-            &.res-ap{
-                background-color: @blue;
-                bottom: -40px;
-                left: 33.33%;
-            }        
-            &.res-cm{
-                background-color: @pink;
-                line-height: 1em;
-                padding-top:8px;
-                bottom: -40px;
-                right: 0;
-            }
-        }
-    }
-    .fr-links{
-        background-color: transparent;
-        a{
-            .border-radius(4px);
-            height: 40px;
-            line-height: 40px;
-            display: block;
-            float: left;
-            padding-left: 5%;
-            padding-right: 5%;
-        }
-    }
-    .resources-list{
-        margin:0;
-        padding: 0;
-        li{
-            width: 100%;
-            float: left;
-            list-style: none;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom:1px solid #fff;
-            h5{
-                text-transform: none;
-                font-size: 1.2em;
-                margin: 0;
-            }
-            h6{
-                font-size: 1.1em;
-                margin: 0 0px;
-            }
-        }
-        .button{
-            background-color: #fff;
-            color: @purple;
-            display: block;
-             .border-radius(4px);
-            height: 40px;
-            line-height: 40px;
-            float: left;
-            padding-left: 5%;
-            padding-right: 5%;
-            &:hover{
-                background-color:@turquoise;
-            }
         }
     }
 }
@@ -579,7 +454,6 @@ input[type=submit]{
         padding-bottom: 500px;
         background: url(../img/tbm.png) no-repeat 50px 50px;
     }
-
     .intro-container{
         float: left;
         width: 100%;
@@ -598,100 +472,6 @@ input[type=submit]{
             margin: 0px;
         }
     }
-    .wb-links{
-        width: 100%;
-        .border-radius(16px);
-        padding: 3%;
-        float: right;
-        margin: 30px 0 0;
-        li{
-            list-style: none;
-            margin: 0 0 20px 0;
-            padding:0;
-            float: left;
-            width: 40%;
-            a{
-                color: #fff;
-                .link-graphic{
-                    width: 105px;
-                    height: 105px;
-                    .border-radius(53px);
-                    display: block;
-                    background: url(../img/sprite.png) no-repeat #fff -371px -548px;
-                    float: left;
-                    margin-right: 15px;
-                }
-                .link-text{
-                    background-color: @pink;
-                    padding: 5px 0;
-                    line-height: 28px;
-                    -webkit-box-shadow: 5px 0px 0px @pink, -5px 0px 0px @pink;
-                    -moz-box-shadow:    5px 0px 0px @pink, -5px 0px 0px @pink;
-                    box-shadow:         5px 0px 0px @pink, -5px 0px 0px @pink;
-                    line-height: 102px;
-                }
-            }
-        }
-        .wb-form{
-            width: 60%;
-            .link-graphic{
-                background-position: -241px -549px;
-            }
-        }
-        a:hover{
-            .link-graphic{
-                background-color: @purple;
-            }
-            .link-text{
-                background-color: @purple;
-                -webkit-box-shadow: 5px 0px 0px @purple, -5px 0px 0px @purple;
-                -moz-box-shadow:    5px 0px 0px @purple, -5px 0px 0px @purple;
-                box-shadow:         5px 0px 0px @purple, -5px 0px 0px @purple;
-                color: #fff;
-            }
-        }
-    }
-    
-    .wristband-img{
-        clear: both;
-        span{
-            display: block;
-            width: 234px;
-            height: 234px;
-            .border-radius(117px);
-            background: url(../img/sprite.png) no-repeat #fff;
-            float: left;
-            margin-top: 30px;
-            &.wristband{
-                background-position: 13px 53px;
-                float: left;
-                margin-left: 6%;
-            } 
-            &.boy{
-                float: right;
-                background-position: 0 -561px;
-                margin-right: 6%;
-            }
-            &.last{
-                display: none;
-            }
-        }
-    }
-    .fr-links{
-        width: 100%;
-        .border-radius(16px);
-        padding: 3%;
-        float: right;
-        margin: 30px 0 0;
-        min-height: 150px;
-        padding-top: 80px;
-        background: url(../img/sprite.png) no-repeat 300px -1729px @blue;
-        a{
-            height: 50px;
-            line-height: 50px;
-        }
-    }
-    
     #pink-avatar, #blue-avatar, #purple-avatar{
        position: absolute;
     }
@@ -709,33 +489,6 @@ input[type=submit]{
         right: 20px;
         width: 200px;
         height: 200px;
-    }
-    .fr-home{
-        background-color: @turquoise;
-    }
-    .fr-friends, .res-ap{
-        background-color: @blue;
-    }
-    .fr-school, .res-cm{
-        background-color: @pink;
-    } 
-    .res-lp{
-        background-color: @purple;
-    }
-    .button{
-        display: block;
-        width: auto;
-        padding-left: 15px;
-        padding-right: 15px;
-        height: 30px;
-        line-height: 30px;
-        .border-radius(4px);
-        float: left;
-        margin-right: 10px;
-        &:hover{
-            background-color:#fff;
-            color: @purple;
-        }
     }
     article{
         clear: both;
@@ -761,7 +514,6 @@ input[type=submit]{
     }
     #navigation li{
         width: 15%;
-        list-style: none;
     }
     .caveat{
         float: left;
@@ -773,108 +525,6 @@ input[type=submit]{
             line-height: 1.3em;
             background: url(../img/sprite.png) no-repeat 0 -435px;
             min-height: 67px;
-        }
-    }
-    .three-circles{
-        float: left;
-        width: 100%;
-        .circle{
-            width: 210px;
-            height: 210px;
-            .border-radius(103px);
-            background-color: #fff;
-            float: left;
-            margin: 10px -13px 0;
-            span{
-                display: block;
-                width: 100%;
-                height: 100%;
-                .border-radius(50%);
-                background: url(../img/sprite.png) no-repeat 10px 36px;
-            }
-        }
-    }
-    .home-circles{
-        .circle2{
-            background-color: @blue;
-            span{
-                background-position: -290px -662px;
-            }
-        }
-        .circle3{
-            background-color: @pink;
-            span{
-                background-position: 10px -808px;
-            }
-        }
-    }
-    .friends-circles{
-        .circle1{
-            background-color: @purple;
-            span{
-                background-position: -257px -893px;
-            }
-        }
-        .circle2{
-            background-color: @turquoise;
-            span{
-                background-position: 1px -1048px;
-            }
-        }
-        .circle3{
-            background-color: @pink;
-            span{
-                background-position: -241px -1094px;
-            }
-        }
-    }    
-    .school-circles{
-        .circle1{
-            background-color: @turquoise;
-            span{
-                background-position: -4px -1272px;
-            }
-        }
-        .circle2{
-            background-color: @purple;
-            span{
-                background-position: -363px -1273px;
-            }
-        }
-        .circle3{
-            background-color: @blue;
-            span{
-                background-position: -187px -1411px;
-            }
-        }
-    }
-    .resources-list{
-        margin:0;
-        padding: 0;
-        li{
-            width: 100%;
-            float: left;
-            padding: 0 0 0 244px;
-            list-style: none;
-            background: url(../img/sprite.png) no-repeat -313px -1796px;
-            min-height: 205px;
-            margin-bottom: 30px;
-            h5{
-                text-transform: none;
-                font-size: 1.2em;
-                margin: 0;
-            }
-            h6{
-                font-size: 1.1em;
-                margin: 0 0 15px;
-            }
-        }
-        .button{
-            background-color: #fff;
-            color: @purple;
-            &:hover{
-                background-color:@turquoise;
-            }
         }
     }
 }
@@ -893,7 +543,6 @@ input[type=submit]{
     }
     #pink-avatar, #blue-avatar, #purple-avatar{
         position: absolute;
-        z-index: 2;
     }
     #pink-avatar{
         right: 143px;
@@ -1005,43 +654,7 @@ input[type=submit]{
         -ms-transform:translate(0px) rotate(-720deg);
         transform:translate(0px) rotate(-720deg);   
     }
-    .wb-links li{
-        width: 100%!important;
-        clear: both;
-        a{
-            position: relative;
-            .link-graphic{
-                display: inline;
-            }
-            .link-text{
-                position: relative;
-                top:26px;
-                line-height: 28px;
-            }
-        }
-    }
-    .wb-order{
-        margin-bottom: 0!important;
-        .link-text{
-            top:37px!important;
-        }
-    }
-    .wristband-img{
-        margin-top: 30px;
-        float: left;
-    }
-    span.wristband{
-        display: block!important;
-        margin: 0!important;
-        float: left;
-    }
-    span.wristband.last{
-        float: right;
-    }
-    .boy{
-        float: left!important;
-        margin: 0 54px!important;
-    }
+
 
     .caveat p{
         width: 960px;
@@ -1076,63 +689,11 @@ input[type=submit]{
         }
     }
     .intro-container{
-        width: 63%;
-        margin-right: 3%;
+        width: 66%;
     }
-    .bm-signup, .wb-links, .fr-links{
+    .bm-signup{
         width: 34%;
-        margin-top: 0;
     }
-    .fr-links{
-        background-position: 0 -1630px;
-        padding-top:250px;
-        min-height:315px;
-        .fr-link{
-            height: 50px;
-            line-height: 50px;
-            font-size: 1.2em;
-            width: 90%;
-            margin: 0 auto;
-            float: none;
-        }
-    }
-    .three-circles{
-        float: right;
-        width: 34%;
-        position: relative;
-        .circle{
-            position: absolute;
-            &.circle1{
-                top:0;
-                left: 10px;
-            }
-            &.circle2{
-                top:170px;
-                right: 0px;
-            }
-            &.circle3{
-                top:340px;
-                left: 0px;
-            }
-        }
-    }
-    .resources-list{
-        li{
-            background: url(../img/sprite.png) no-repeat -313px -1796px;
-            &.middle{
-                margin: 0 5%;
-            }
-            h5{
-                margin-top: 1em;
-            }
-        }
-    }
-}
-.resources-assembly a{
-    color:@blue!important;
-}
-.resources-materials a{
-    color:@pink!important;
 }
 
 .clearfix:before, .container:before,
