@@ -1,8 +1,10 @@
 import logging
 import os
+
 from flask import Flask, render_template
 from flask.ext.mail import Mail
 from flask.ext.sqlalchemy import SQLAlchemy
+
 from webassets.loaders import PythonLoader
 
 
@@ -52,3 +54,6 @@ def internal_error(error):
     return render_template('500.jinja'), 500
 
 import views
+
+from apps.email_subscription import email_subscription_app
+app.register_blueprint(email_subscription_app)

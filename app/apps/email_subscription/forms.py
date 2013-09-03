@@ -1,8 +1,8 @@
-from flask_wtf import Form
+from flask.ext.wtf import Form
 from wtforms import TextField
 from wtforms import validators
 
 
-class SubscribeForm(Form):
+class SubscriptionForm(Form):
     email = TextField(u'Email Address', validators=[validators.Email(),
-                validators.length(max=80)])
+                validators.length(max=255)])

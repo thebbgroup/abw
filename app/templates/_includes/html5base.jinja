@@ -27,14 +27,21 @@
         {% endfor %}
     </ul>
     {% endwith %}
+
     {% block body %}{% endblock %}
+
+    <fieldset>
+        <legend>Sign up to our newsletter:</legend>
+        <!-- <form method="POST" action="{{ url_for('subscribe') }}"> -->
+        <form method="POST" action=".">
+            {{ g.subscribe.csrf_token }}
+            {{ g.subscribe.email.label }}: {{ g.subscribe.email }}
+            <input type="submit" value="Go">
+        </form>
+    </fieldset>
+
     {% assets 'js_foot' %}
         <script src="{{ ASSET_URL }}"></script>
     {% endassets %}
-    <form method="POST" action="/subscribe/">
-        {{ g.subscribe.csrf_token }}
-        {{ g.subscribe.email.label }}: {{ g.subscribe.email }}
-        <input type="submit" value="Go">
-    </form>
 </body>
 </html>
