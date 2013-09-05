@@ -32,8 +32,7 @@
 
     <fieldset>
         <legend>Sign up to our newsletter:</legend>
-        <!-- <form method="POST" action="{{ url_for('subscribe') }}"> -->
-        <form method="POST" action=".">
+        <form method="POST">
             {{ g.subscribe.csrf_token }}
             {{ g.subscribe.email.label }}: {{ g.subscribe.email }}
             <input type="submit" value="Go">

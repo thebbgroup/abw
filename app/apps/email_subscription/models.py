@@ -1,4 +1,4 @@
-import time
+from datetime import datetime
 from base64 import urlsafe_b64encode
 from os import urandom
 
@@ -10,7 +10,7 @@ class Subscription(db.Model):
     hash = db.Column(db.String(8), unique=True)
     email = db.Column(db.String(255), unique=True)
     confirmed = db.Column(db.Boolean(), default=False)
-    timestamp = db.Column(db.Integer(11), default=None)
+    timestamp = db.Column(db.DateTime, default=datetime.now)
 
     def confirm(self):
         self.confirmed = True
@@ -20,7 +20,6 @@ class Subscription(db.Model):
         self.hash = hash
         self.email = email
         self.confirmed = confirmed
-        self.timestamp = int(time.time())
 
     def __repr__(self):
         return '<Email %r>' % self.email

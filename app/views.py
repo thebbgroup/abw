@@ -1,16 +1,6 @@
-from flask import g, render_template, redirect, url_for
+from flask import render_template
 
 from app import app
-from app.apps.email_subscription import subscription_requested
-from app.apps.email_subscription.forms import SubscriptionForm
-
-
-@app.before_request
-def before_request():
-    # Add the subscription form to all requests:
-    g.subscribe = SubscriptionForm()
-    if subscription_requested(g.subscribe):
-        return redirect(url_for('subscribe'))
 
 
 @app.route('/', methods=['GET', 'POST'])

@@ -1,12 +1,22 @@
-from flask import Blueprint, flash, render_template, request, url_for
+from flask import (Blueprint, flash, g, redirect, render_template,
+        request, url_for)
 from flask.ext.mail import Message
 
-from app import db, mail
+from app import app, db, mail
 from .models import Subscription
+from .forms import SubscriptionForm
 
 
 email_subscription_app = Blueprint('email_subscription',
         __name__, template_folder='templates')
+
+
+@app.before_request
+def before_request():
+    # Add the subscription form to all requests:
+    g.subscribe = SubscriptionForm()
+    if subscription_requested(g.subscribe):
+        return redirect(url_for('subscribe'))
 
 
 def build_confirm_email(email_address, url):
@@ -36,14 +46,21 @@ def build_success_email(email_address):
     return message
 
 
-@email_subscription_app.route('/subscribe/<hash>/', methods=['GET', 'POST'])
+@email_subscription_app.route('/<hash>/', methods=['GET', 'POST'])
 def confirm_subscription(hash):
     subscribe = Subscription.query.filter_by(hash=hash).first()
-    subscribe.confirm()
-    db.session.commit()
-    message = build_success_email(subscribe.email)
-    mail.send(message)
-    return render_template('subscribe_successful.jinja')
+    if not subscribe:
+        # 404 if hash isn't in DB.
+        return render_template('404.jinja'), 404
+
+    if request.method == 'GET':
+        return render_template('subscribe_confirm.jinja'), 404
+    else:
+        subscribe.confirm()
+        db.session.commit()
+        message = build_success_email(subscribe.email)
+        mail.send(message)
+        return render_template('subscribe_successful.jinja')
 
 
 def subscription_requested(form):

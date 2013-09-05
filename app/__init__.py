@@ -56,4 +56,4 @@ def internal_error(error):
 import views
 
 from apps.email_subscription import email_subscription_app
-app.register_blueprint(email_subscription_app)
+app.register_blueprint(email_subscription_app, url_prefix='/subscribe')
