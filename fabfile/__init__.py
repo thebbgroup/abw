@@ -4,4 +4,4 @@ from fabric.colors import cyan
 
 def run():
     "Start app in debug mode for development"
-    local('venv/bin/python run.py')
+    local('FLASK_CONFIG=settings/dev.py venv/bin/python run.py')
