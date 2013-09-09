@@ -1,4 +1,4 @@
 # Settings for local development:
 
 DEBUG = True
-MAIL_PORT = 1025
+MAIL_SUPPRESS_SEND = True

@@ -24,6 +24,7 @@ class Subscription(db.Model):
 
     def confirm(self):
         self.confirmed = True
+        db.session.add(self)
         db.session.commit()
 
     @classmethod

@@ -19,7 +19,7 @@ def before_request():
             flash('This address is already subscribed!')
         else:
             mail.send(confirmation_msg(sub))
-            return redirect(url_for('.subscribe'))
+            return redirect(url_for('email_subscription.subscribe'))
 
 
 @sub_app.route('/requested', methods=['GET', 'POST'])
@@ -27,7 +27,7 @@ def subscribe():
     return render_template('subscribe/requested.jinja')
 
 
-@sub_app.rout('/confirmed', methods=['GET', 'POST'])
+@sub_app.route('/confirmed', methods=['GET', 'POST'])
 def confirmed():
     return render_template('subscribe/confirmed.jinja')
 
@@ -41,14 +41,14 @@ def confirm(hash):
     if request.method == 'POST':
         sub.confirm()
         mail.send(success_msg(sub.email))
-        return redirect(url_for('.confirmed'))
+        return redirect(url_for('email_subscription.confirmed'))
 
     return render_template('subscribe/confirm.jinja')
 
 
 def confirmation_msg(sub):
     # _external is to add domain to result of url_for() lookup:
-    url = url_for('.confirm',
+    url = url_for('email_subscription.confirm',
             hash=sub.hash,
             _external=True,
             _method='GET')
