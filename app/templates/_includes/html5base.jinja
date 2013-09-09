@@ -28,7 +28,9 @@
     </ul>
     {% endwith %}
 
+    {% include '_includes/header.jinja' %}
     {% block body %}{% endblock %}
+    {% include '_includes/footer.jinja' %}
 
     {% assets 'js_foot' %}
         <script src="{{ ASSET_URL }}"></script>
