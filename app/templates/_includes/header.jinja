@@ -2,11 +2,11 @@
     <nav>
         <ul id="navigation">
             <li id="nav-control"><a>expand navigation</a></li>
-            <li class="first_link"><a href="/wristbands/" id="wristband-link">Wristbands</a></li>
-            <li><a href="/resources/" id="resources-link">Resources</a></li>
-            <li><a href="/get-involved/" id="involved-link">Get Involved</a></li>
-            <li><a href="/big_march/" id="bm-link">The Big March</a></li>
-            <li><a href="/get_help/" id="gh-link">Get Help</a></li>
+            <li class="first_link"><a href="{{ url_for('wristbands') }}" id="wristband-link">Wristbands</a></li>
+            <li><a href="{{ url_for('resources') }}" id="resources-link">Resources</a></li>
+            <li><a href="{{ url_for('get-involved') }}" id="involved-link">Get Involved</a></li>
+            <li><a href="{{ url_for('big-march') }}" id="bm-link">The Big March</a></li>
+            <li><a href="{{ url_for('get-help') }}" id="gh-link">Get Help</a></li>
             <li id="logo"><a href="http://www.beatbullying.org/" id="bb-link">Beat Bullying</a></li>
         </ul>
     </nav>
