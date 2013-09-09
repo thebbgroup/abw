@@ -542,7 +542,7 @@ input[type=submit]{
     #navigation{
         li{
             padding: 0 1%;
-            margin:0 1%;
+            margin:0 0.5%;
             float: left;
             &.first_link{
                 margin-left:0;
@@ -554,6 +554,8 @@ input[type=submit]{
             &#logo{
                 margin-right: 0;
                 padding-right: 0;
+                float: right;
+                min-width: 100px;
                 a{
                     text-indent: -9999px;
                     background: url(../img/sprite.png) no-repeat right -191px;
@@ -887,6 +889,12 @@ input[type=submit]{
     nav, .container{
         width: 960px;
         margin: 0 auto;
+    }
+    #navigation{
+        li{
+            padding: 0 1%;
+            margin:0 1.5%;
+        }
     }
     .container{
         padding:75px;
