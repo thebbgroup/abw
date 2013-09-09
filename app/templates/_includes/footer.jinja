@@ -7,7 +7,7 @@
                 <fieldset>
                     <legend>Sign up to our newsletter:</legend>
                     {{ form.csrf_token }}
-                    {{ form.email.label }}: {{ form.email }}
+                    {{ form.email.label }} {{ form.email }}
                     {% if form.email.errors %}
                     <ul class="errors">
                         {% for error in form.email.errors %}
