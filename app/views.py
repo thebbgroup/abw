@@ -31,8 +31,3 @@ def big_march():
 @app.route('/get-help/', methods=['GET', 'POST'])
 def get_help():
     return render_template('get_help.jinja')
-
-
-@app.route('/subscribe/', methods=['GET', 'POST'])
-def subscribe():
-    return render_template('email_sent.jinja')
