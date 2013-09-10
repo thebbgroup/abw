@@ -33,6 +33,7 @@ textarea {
 @light-blue: #70b9df;
 @dark-blue: #1c3762;
 @v-light-blue: #afdbdc;
+@charcoal: #333333;
 
 /* apply a natural box layout model to all elements */
 *, *:before, *:after {
@@ -45,6 +46,9 @@ body {
     font-family: arial, helvetica, sans-serif;
     margin: 0;
     background: @light-blue;
+}
+#resources .intro {
+    color: @charcoal;
 }
 ::-moz-selection {
     background: #b3d4fc;
@@ -104,7 +108,7 @@ header .abw-intro, .site-links, footer, .tbm-intro{
     width: 100%;
 }
 header{
-    background-color: #333333;
+    background-color: @charcoal;
     width: 100%;
     float: left;
 }
