@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, send_from_directory
 
 from app import app
 
@@ -16,6 +16,11 @@ def wristbands():
 @app.route('/resources', methods=['GET', 'POST'])
 def resources():
     return render_template('resources.jinja')
+
+
+@app.route('/resources/<res>', methods=['GET'])
+def resource(res):
+    return send_from_directory(app.config['RESOURCES_FOLDER'], res, as_attachment=True)
 
 
 @app.route('/get-involved/', methods=['GET', 'POST'])

@@ -1,3 +1,4 @@
+from os.path import dirname, join, realpath, normpath
 import socket
 
 DEBUG = True
@@ -17,3 +18,5 @@ DEFAULT_MAIL_SENDER = 'hello@%s' % socket.getfqdn()
 ASSETS_DEBUG = False
 
 GOOGLE_ANALYTICS_ID = 'foo'
+
+RESOURCES_FOLDER = normpath(realpath(join(dirname(__file__), '../static/resources/')))
