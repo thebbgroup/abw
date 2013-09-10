@@ -140,11 +140,14 @@ p{
         margin: 0;
     }
     h2{
-        margin:5px 0 26px 0;
+        margin:5px 0 0px 0;
     }
 }
 .abw-intro p{
     margin-top: 25px;
+}
+h2.abw_heading {
+    font-size: 2em;
 }
 .tbm-intro{
     background-color: @light-blue;
@@ -238,6 +241,39 @@ footer{
         width: 100%;
         padding: 10px;
         background-color: #65c1c2;
+    }
+    #newsletter-signup {
+        legend {
+            margin-bottom: 1em;
+        }
+        input[type="submit"] {
+            height: 40px;
+            line-height: 40px;
+            &:hover {
+                background: #8fcfd0;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.backToTop {
+    position: fixed;
+    opacity: 0;
+    padding: 2em 1em;
+    bottom: 2em;
+    left: 2em;
+    text-align: center;
+    border-radius: 40px;
+    background: #fff;
+    width: 5em;
+    height: 5em;
+    color: @purple;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+    &:hover {
+        background: @light-blue;
+        color: #fff;
     }
 }
 #social-icons{
@@ -853,6 +889,26 @@ input[type=submit]{
             }
         }
     }
+    .help-circles{
+        .circle1{
+            background-color: @purple;
+            span{
+                background-position:-25px -2377px;
+            }
+        }
+        .circle2{
+            background-color: @pink;
+            span{
+                background-position: -308px -2182px;
+            }
+        }
+        .circle3{
+            background-color: @light-blue;
+            span{
+                background-position: -30px -1988px;
+            }
+        }
+    }
     .resources-list{
         margin:0;
         padding: 0;
@@ -915,9 +971,9 @@ input[type=submit]{
     } 
     @-webkit-keyframes cssAnimation {
         from { 
-            -webkit-transform:  rotate(0deg);
+            -webkit-transform: translate(700px) rotate(0deg);
         }  to {
-            -webkit-transform: rotate(-720deg);
+            -webkit-transform: translate(0px) rotate(-720deg);
         }
     }
     @-moz-keyframes cssAnimation {
@@ -929,9 +985,9 @@ input[type=submit]{
     }
     @-o-keyframes cssAnimation {
         from {
-            -o-transform:  rotate(0deg);
+            -o-transform: translate(700px) rotate(0deg);
         } to {
-            -o-transform:  rotate(-720deg);
+            -o-transform: translate(0px) rotate(-720deg);
         }
     }
 
@@ -943,27 +999,7 @@ input[type=submit]{
         -moz-animation: cssAnimation 1.60s 1 ease-in-out;
         -o-animation: cssAnimation 1.60s 1 ease-in-out;
     } 
-    @-webkit-keyframes cssAnimation {
-        from { 
-            -webkit-transform: rotate(0deg);
-        }  to {
-            -webkit-transform: rotate(-720deg);
-        }
-    }
-    @-moz-keyframes cssAnimation {
-        from {
-            -moz-transform: translate(700px) rotate(0deg);
-        } to { 
-            -moz-transform: translate(0px) rotate(-720deg);
-        }
-    }
-    @-o-keyframes cssAnimation {
-        from {
-            -o-transform:  rotate(0deg);
-        } to {
-            -o-transform:  rotate(-720deg);
-        }
-    }   
+    
     #purple-avatar{
         right: 9px;
         top: 190px;
@@ -971,27 +1007,7 @@ input[type=submit]{
         -moz-animation: cssAnimation 1.20s 1 ease-in-out;
         -o-animation: cssAnimation 1.20s 1 ease-in-out;
     } 
-    @-webkit-keyframes cssAnimation {
-        from { 
-            -webkit-transform: rotate(0deg);
-        }  to {
-            -webkit-transform: rotate(-720deg);
-        }
-    }
-    @-moz-keyframes cssAnimation {
-        from {
-            -moz-transform: translate(700px) rotate(0deg);
-        } to { 
-            -moz-transform: translate(0px) rotate(-720deg);
-        }
-    }
-    @-o-keyframes cssAnimation {
-        from {
-            -o-transform:  rotate(0deg);
-        } to {
-            -o-transform:  rotate(-720deg);
-        }
-    }
+  
     .rollout{
         -moz-transition:all 2s ease;
         -webkit-transition:all 2s ease;
