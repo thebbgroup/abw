@@ -1,0 +1,19 @@
+{% macro errors_for(field) %}
+    {% if field.errors %}
+        <ul class="errors">
+        {% for error in field.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}
+
+{% macro render_field(field, label=None) %}
+    <div class="form_row{% if field.errors %} has_errors{% endif %}{% if 'clear' in kwargs %} clear{% endif %}">
+        <label for="{{ field.id }}"{% if field.flags.required %} class="required" title="This field is required"{% endif %}>
+            {% if label and not placeholder %}{{ label|e }}{% else %}{{ field.label.text|e }}{% endif %}{% if field.flags.required %}<span>*</span>{% endif %}
+        </label>
+        {{ field(**kwargs) }}
+        {{ errors_for(field) }}
+    </div>
+{% endmacro %}

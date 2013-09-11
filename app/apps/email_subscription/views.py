@@ -1,4 +1,4 @@
-from flask import abort, flash, g, redirect, render_template, request, url_for
+from flask import abort, g, redirect, render_template, request, url_for
 from flask.ext.mail import Message
 
 from app import app, db, mail
@@ -14,9 +14,9 @@ def before_request():
 
     if form.validate_on_submit():
         try:
-            sub = Subscription.create(form.email.data)
+            sub = Subscription.create(form.name.data, form.email.data)
         except DuplicateSubscription:
-            flash('This address is already subscribed!')
+            form.email.errors.append('This address is already subscribed!')
         else:
             mail.send(confirmation_msg(sub))
             return redirect(url_for('email_subscription.subscribe'))
@@ -40,7 +40,7 @@ def confirm(hash):
 
     if request.method == 'POST':
         sub.confirm()
-        mail.send(success_msg(sub.email))
+        mail.send(success_msg(sub))
         return redirect(url_for('email_subscription.confirmed'))
 
     return render_template('subscribe/confirm.jinja')
@@ -69,9 +69,9 @@ def confirmation_msg(sub):
     return msg
 
 
-def success_msg(addr):
+def success_msg(sub):
     msg = Message(subject='You are now signed up to the newsletter!')
-    msg.recipients = [addr]
+    msg.recipients = [sub.email]
     msg.sender = 'hello@thebbgroup.org'
     msg.body = '''
     Congratulations: You are now signed up to our newsletter!

@@ -18,6 +18,7 @@ class DuplicateSubscription(Exception):
 class Subscription(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     hash = db.Column(db.String(8), unique=True, default=token)
+    name = db.Column(db.String(255))
     email = db.Column(db.String(255), unique=True)
     confirmed = db.Column(db.Boolean(), default=False)
     timestamp = db.Column(db.DateTime, default=datetime.now)
@@ -28,8 +29,8 @@ class Subscription(db.Model):
         db.session.commit()
 
     @classmethod
-    def create(self, email):
-        sub = Subscription(email=email)
+    def create(self, name, email):
+        sub = Subscription(name=name, email=email)
         db.session.add(sub)
         try:
             db.session.commit()
@@ -38,4 +39,4 @@ class Subscription(db.Model):
         return sub
 
     def __repr__(self):
-        return '<Email %r>' % self.email
+        return '<Subscription %r %r>' % (self.name, self.email)
