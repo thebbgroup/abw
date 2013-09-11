@@ -11,7 +11,9 @@ from .forms import SubscriptionForm
 def before_request():
     # Add the subscription form to all requests:
     g.subscribe = SubscriptionForm(prefix='news')
-    handle_subscription(g.subscribe)
+    response = handle_subscription(g.subscribe)
+    if response:
+        return response
 
 
 def handle_subscription(form):
@@ -23,6 +25,7 @@ def handle_subscription(form):
         else:
             mail.send(confirmation_msg(sub))
             return redirect(url_for('email_subscription.subscribe'))
+    return None
 
 
 @sub_app.route('/requested/', methods=['GET', 'POST'])

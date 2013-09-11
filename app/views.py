@@ -33,7 +33,9 @@ def get_involved():
 @app.route('/big-march-2013/', methods=['GET', 'POST'])
 def big_march():
     form = SubscriptionForm(prefix='bm')
-    handle_subscription(form)
+    response = handle_subscription(form)
+    if response:
+        return response
     return render_template('big_march.jinja', form=form)
 
 
