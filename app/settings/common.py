@@ -17,6 +17,6 @@ DEFAULT_MAIL_SENDER = 'hello@%s' % socket.getfqdn()
 
 ASSETS_DEBUG = False
 
-GOOGLE_ANALYTICS_ID = 'foo'
+GOOGLE_ANALYTICS_ID = 'UA-3780700-4'
 
 RESOURCES_FOLDER = normpath(realpath(join(dirname(__file__), '../static/resources/')))
