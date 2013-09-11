@@ -10,11 +10,14 @@ from .forms import SubscriptionForm
 @app.before_request
 def before_request():
     # Add the subscription form to all requests:
-    g.subscribe = form = SubscriptionForm()
+    g.subscribe = SubscriptionForm(prefix='news')
+    handle_subscription(g.subscribe)
 
+
+def handle_subscription(form):
     if form.validate_on_submit():
         try:
-            sub = Subscription.create(form.name.data, form.email.data)
+            sub = Subscription.create(form)
         except DuplicateSubscription:
             form.email.errors.append('This address is already subscribed!')
         else:
@@ -22,17 +25,17 @@ def before_request():
             return redirect(url_for('email_subscription.subscribe'))
 
 
-@sub_app.route('/requested', methods=['GET', 'POST'])
+@sub_app.route('/requested/', methods=['GET', 'POST'])
 def subscribe():
     return render_template('subscribe/requested.jinja')
 
 
-@sub_app.route('/confirmed', methods=['GET', 'POST'])
+@sub_app.route('/confirmed/', methods=['GET', 'POST'])
 def confirmed():
     return render_template('subscribe/confirmed.jinja')
 
 
-@sub_app.route('/<hash>', methods=['GET', 'POST'])
+@sub_app.route('/<hash>/', methods=['GET', 'POST'])
 def confirm(hash):
     sub = Subscription.query.filter_by(hash=hash).first()
     if not sub:

@@ -2,11 +2,11 @@
     <div class="container">
         <div id="signup">
             <h4>Newsletter</h4>
-            {% from '_includes/forms.jinja' import render_field, errors_for %}
+            {% from '_includes/forms.jinja' import render_field %}
             {% with form=g.subscribe %}
             <form method="post" id="newsletter-signup">
                 <fieldset>
-                    <legend>Sign up to our newsletter:</legend>
+                    <legend>Sign up to our newsletter</legend>
                     {{ form.csrf_token }}
                     {{ render_field(form.name, placeholder='Name') }}
                     {{ render_field(form.email, placeholder='Email') }}
