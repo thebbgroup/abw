@@ -1,6 +1,8 @@
 from flask import render_template, send_from_directory
 
 from app import app
+from apps.email_subscription.views import handle_subscription
+from apps.email_subscription.forms import SubscriptionForm
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -13,12 +15,12 @@ def wristbands():
     return render_template('wristbands.jinja')
 
 
-@app.route('/resources', methods=['GET', 'POST'])
+@app.route('/resources/', methods=['GET', 'POST'])
 def resources():
     return render_template('resources.jinja')
 
 
-@app.route('/resources/<res>', methods=['GET'])
+@app.route('/resources/<res>/', methods=['GET'])
 def resource(res):
     return send_from_directory(app.config['RESOURCES_FOLDER'], res, as_attachment=True)
 
@@ -30,7 +32,9 @@ def get_involved():
 
 @app.route('/big-march-2013/', methods=['GET', 'POST'])
 def big_march():
-    return render_template('big_march.jinja')
+    form = SubscriptionForm(prefix='bm')
+    handle_subscription(form)
+    return render_template('big_march.jinja', form=form)
 
 
 @app.route('/get-help/', methods=['GET', 'POST'])

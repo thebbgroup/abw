@@ -71,6 +71,10 @@ fieldset {
     margin: 0;
     padding: 0;
 }
+.bm-signup legend {
+    text-indent: -9999em;
+    height: 0;
+}
 
 textarea {
     resize: vertical;
@@ -115,6 +119,24 @@ header{
 p{
     line-height: 1.7em;
     margin:0 0 1em;
+}
+.has_errors {
+    input[type='text'],
+    input[type='email'] {
+        border-color: red;
+        background-color: #fcc;
+    }
+}
+.errors {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 10px;
+
+    li {
+        color: red;
+        font-weight: bold;
+        font-size: .8em;
+    }
 }
 #navigation{
     width: 100%;

@@ -1,24 +1,36 @@
 {% extends '_includes/html5base.jinja' %}
+
 {% block body_attr %} id="tbm"{% endblock %}
+
+{% block title %}Big March 2013 - {{ super }}{% endblock %}
+
 {% block body %}
-        <section class="tbm-intro intro">
-            <div class="container">
-                <div class="intro-container">
-                    <h1 class="abw_heading">The Big March 2014</h1>
-                    <h2 class="abw_heading">It's back and will be bigger than ever before</h2>
-                    <p class="bm-intro">Watch this space for more information on Europe's <br>biggest fight against bullying.</p>
-                    
-                </div>
-                <div class="bm-signup">
-                    <h3>Interested in</h3><h3>The Big March?</h3>
-                    <p>Don't miss out. Sign up now and we'll alert you when the campaign goes live and you can join The Big March.</p>
-                    <form>
-                      <label for="bm_name">Name</label><input id="bm_name" type="text" placeholder="Name"></input>
-                      <label for="bm_email">Email</label><input id="bm_email" type="email" placeholder="Email"></input>
-                      <input type="submit" value="Sign Up Now"></input>
-                    </form>
-                </div>
-               
-            </div>
-        </section>
+<section class="tbm-intro intro">
+    <div class="container">
+        <div class="intro-container">
+            <h1 class="abw_heading">The Big March 2014</h1>
+            <h2 class="abw_heading">It's back and will be bigger than ever before</h2>
+            <p class="bm-intro">
+                Watch this space for more information on Europe's<br>biggest
+                fight against bullying.
+            </p>
+        </div>
+        <div class="bm-signup">
+            <h3>Interested in</h3><h3>The Big March?</h3>
+            <p>
+                Don't miss out. Sign up now and we'll alert you when the
+                campaign goes live and you can join The Big March.
+            </p>
+            {% from '_includes/forms.jinja' import render_field %}
+            <form method="post">{{ form.csrf_token }}
+                <fieldset>
+                    <legend>Register your interest in the Big March</legend>
+                    {{ render_field(form.name, placeholder='Name') }}
+                    {{ render_field(form.email, placeholder='Email') }}
+                    <input type="submit" value="Sign Up Now"></input>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</section>
 {% endblock %}

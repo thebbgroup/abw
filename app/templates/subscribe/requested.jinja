@@ -1,8 +1,17 @@
 {% extends '_includes/html5base.jinja' %}
 
+{% block title %}Subscription Request - {{ super }}{% endblock %}
+
 {% block body %}
-
-    <h1>Anti-Bullying Week</h1>
-    <h3>We have sent you an email to confirm your address. Click the link inside.</h3>
-
+<section class="intro">
+    <div class="container">
+        <div class="intro-container">
+            <h2 class="abw_heading">Subscription Request</h2>
+            <p>
+                We have sent you an email to confirm your address.  Please
+                check your mail.
+            </p>
+        </div>
+    </div>
+</section>
 {% endblock %}
