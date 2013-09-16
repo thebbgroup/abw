@@ -587,6 +587,14 @@ input[type=submit]{
             }
         }
     }
+    #signup{
+        margin-bottom: 20px;
+    }
+    .resources-list li a{
+        clear: both;
+        margin-bottom: 20px;
+        min-width: 70%;
+    }
 }
 
 
@@ -638,11 +646,8 @@ input[type=submit]{
     .abw-intro .container{
         position: relative;
         min-height: 440px;
-        h2{
-            width: 90%;
-        }
         p{
-            width: 90%;
+            width: 70%;
         }
     }
     .bm-intro{
@@ -824,18 +829,13 @@ input[type=submit]{
         width: 30%;
         float: left;
     }
-    #social-icons{
-        width: 60%;
-        float: right;
-        margin-top: 30px;
-    }
     #navigation li{
         list-style: none;
     }
     .caveat{
         float: left;
          p{
-            width: 60%;
+            width: 50%;
             float:right;
             padding-left: 100px;
             font-size: 0.8em;
@@ -941,9 +941,10 @@ input[type=submit]{
         margin:0;
         padding: 0;
         li{
-            width: 33%;
+            width: 100%;
             float: left;
-            padding: 224px 20px 0;
+            clear: both;
+            padding: 0 20px 0 224px;
             list-style: none;
             background: url(../img/lesson-plan.png) no-repeat 0 0;
             min-height: 205px;
@@ -960,7 +961,10 @@ input[type=submit]{
         }
         .button{
             background-color: #fff;
+            clear: both;
+            margin-bottom: 10px;
             color: @purple;
+            min-width: 191px;
             &:hover{
                 background-color:@turquoise;
             }
@@ -980,6 +984,18 @@ input[type=submit]{
             }
         }
     }
+    #signup{
+        width: 58%;
+        margin-right: 2%;
+        float: left;
+    }
+    #contact-us, #social-icons{
+        width: 30%;
+        float: right;
+    }
+    #social-icons{
+        margin-top: 0px;
+    }
 }
 
 /*Full width overwrite =========================================================================================== */
@@ -993,6 +1009,9 @@ input[type=submit]{
             padding: 0 1%;
             margin:0 1.5%;
         }
+    }
+    .abw-intro .container p{
+        width: 90%;
     }
     .container{
         padding:75px;
@@ -1189,6 +1208,12 @@ input[type=submit]{
     }
     .resources-list{
         li{
+            width: 33%;
+            float: left;
+            padding: 224px 20px 0;
+            min-height: 205px;
+            margin-bottom: 30px;
+            clear: none;
             background: url(../img/lesson-plan.png) no-repeat 0 0;
             &.middle{
                 margin: 0;
@@ -1211,6 +1236,16 @@ input[type=submit]{
                 background-image: url(../img/communication.png);
             }
         }
+    }
+    #signup, #contact-us, #social-icons{
+        width: 30%;
+        float: left;
+    }
+    #signup{
+        margin-right: 0;
+    }
+    #social-icons{
+        margin-top:30px;
     }
 }
 .resources-assembly a{
