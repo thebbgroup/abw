@@ -16,7 +16,7 @@ apt-get update
 apt-get -yq install git curl python-pip python-dev libxml2-dev libxslt-dev libpq-dev postgresql gcc make binutils libjpeg-dev libpng-dev libxrender1 libfontconfig1
 
 curl -sL https://deb.nodesource.com/setup | sudo bash -
-sudo apt-get install nodejs
+apt-get -yq install nodejs
 
 sudo /usr/bin/npm install -g less
 
